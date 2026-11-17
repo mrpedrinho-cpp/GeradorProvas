@@ -1,0 +1,6 @@
+@GeradorProvas.Apresentacao_HostAddress = http://localhost:5216
+
+GET {{GeradorProvas.Apresentacao_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

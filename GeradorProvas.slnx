@@ -1,0 +1,14 @@
+<Solution>
+  <Project Path="GeradorProvas.Aplicacao/GeradorProvas.Aplicacao.csproj">
+    <BuildDependency Project="GeradorProvas.Dominio/GeradorProvas.Dominio.csproj" />
+  </Project>
+  <Project Path="GeradorProvas.Apresentacao/GeradorProvas.Apresentacao.csproj">
+    <BuildDependency Project="GeradorProvas.Aplicacao/GeradorProvas.Aplicacao.csproj" />
+    <BuildDependency Project="GeradorProvas.Infraestrutura/GeradorProvas.Infraestrutura.csproj" />
+  </Project>
+  <Project Path="GeradorProvas.Dominio/GeradorProvas.Dominio.csproj" />
+  <Project Path="GeradorProvas.Infraestrutura/GeradorProvas.Infraestrutura.csproj">
+    <BuildDependency Project="GeradorProvas.Aplicacao/GeradorProvas.Aplicacao.csproj" />
+    <BuildDependency Project="GeradorProvas.Dominio/GeradorProvas.Dominio.csproj" />
+  </Project>
+</Solution>
