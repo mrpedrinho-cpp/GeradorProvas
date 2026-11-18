@@ -16,4 +16,8 @@
     <ProjectReference Include="..\GeradorProvas.Infraestrutura\GeradorProvas.Infraestrutura.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

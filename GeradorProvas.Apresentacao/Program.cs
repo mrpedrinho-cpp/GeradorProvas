@@ -1,23 +1,38 @@
+
+using Fsg.ProgramacaoOrientadaObjetos.GeradorProvas.Aplicacao;
+using Fsg.ProgramacaoOrientadaObjetos.GeradorProvas.Infraestrutura;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Configuração dos Controllers
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
 
+// Repositórios
+builder.Services.AddSingleton<
+    IRepositorioQuestoes,
+    RepositorioQuestoesEmMemoria>();
+
+builder.Services.AddSingleton<
+    IRepositorioProvas,
+    RepositorioProvasEmMemoria>();
+
+// Gerador aleatório
+builder.Services.AddSingleton(Random.Shared);
+
+builder.Services.AddScoped<
+    IEmbaralhador,
+    EmbaralhadorAleatorio>();
+
+// Serviços de aplicação
+builder.Services.AddScoped<ServicoCadastroQuestao>();
+builder.Services.AddScoped<ServicoConsultaQuestao>();
+builder.Services.AddScoped<ServicoGeradorProva>();
+builder.Services.AddScoped<ServicoConsultaProva>();
+
+// Construção da aplicação
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
+// Configuração dos endpoints
 app.MapControllers();
 
 app.Run();
