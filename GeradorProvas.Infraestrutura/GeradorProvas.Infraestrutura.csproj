@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GeradorProvas.Aplicacao\GeradorProvas.Aplicacao.csproj" />
+    <ProjectReference Include="..\GeradorProvas.Dominio\GeradorProvas.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>
